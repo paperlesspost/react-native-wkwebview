@@ -41,6 +41,11 @@
     
     WKWebViewConfiguration* config = [[WKWebViewConfiguration alloc] init];
     config.allowsInlineMediaPlayback = YES;
+    config.mediaPlaybackRequiresUserAction = NO;
+    config.requiresUserActionForMediaPlayback = NO;
+    config.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+    config.allowsPictureInPictureMediaPlayback = NO;
+    
     
     WKUserContentController* userController = [[WKUserContentController alloc]init];
     [userController addScriptMessageHandler:[[WeakScriptMessageDelegate alloc] initWithDelegate:self] name:@"reactNative"];
